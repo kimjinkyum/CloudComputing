@@ -4,7 +4,7 @@ kind: ReplicationController
 
 metadata:
 
-  name: hello-node-rc
+  name: hello-world-rc
 
 spec:
 
@@ -12,23 +12,23 @@ spec:
 
   selector:
 
-    app: hello-node
+    app: hello-world
 
   template:
 
     metadata:
 
-      name: hello-node-pod
+      name: hello-world-pod
 
       labels:
 
-        app: hello-node
+        app: hello-world
 
     spec:
 
       containers:
 
-      - name: hello-node
+      - name: hello-world
 
         image: docker.io/kimo11131/hello-world:v1
 
@@ -37,4 +37,3 @@ spec:
         ports:
 
         - containerPort: 8080
-
