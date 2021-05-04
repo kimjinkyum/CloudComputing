@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: hello-deployment
+
+spec:
+
+  replicas: 3
+
+  minReadySeconds: 3
+
+  selector:
+
+    matchLabels:
+
+      app: hello-deployment
+
+  template:
+
+    metadata:
+
+      name: hello-deployment-pod
+
+      labels:
+
+        app: hello-deployment
+
+    spec:
+
+      containers:
+
+      - name: hello-deployment
+
+        image: docker.io/kimo11131/hello-deployment:v1
+
+        imagePullPolicy: Always
+
+        ports:
+
+        - containerPort: 8080
